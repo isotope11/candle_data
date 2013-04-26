@@ -15,5 +15,16 @@ module CandleData
       @close = price
       @volume += volume
     end
+
+    def to_h
+      {
+        open_time: open_time,
+        open: open,
+        high: high,
+        low: low,
+        close: close,
+        volume: volume
+      }
+    end
   end
 end
