@@ -33,7 +33,11 @@ module CandleData
 
     def in_current_candle(trade)
       return false unless last_candle
-      return trade[:time] == last_candle.open_time
+      return trade[:time] < max_close_time
+    end
+
+    def max_close_time
+      last_candle.open_time + @candle_width
     end
 
     def add_new_candle_for(trade)

@@ -32,6 +32,14 @@ describe CandleBuilder do
     expect(third_candle.volume).to eq(BigDecimal("1"))
   end
 
+  it 'can have the candle_width specified' do
+    builder = CandleBuilder.new(trades, candle_width: 2)
+    expect(builder.candles.count).to eq(2)
+    first_candle  = builder.candles[0]
+    expect(first_candle.close).to eq(BigDecimal("152.000"))
+    expect(first_candle.volume).to eq(BigDecimal("8"))
+  end
+
   # Just a factory for making trades easy in tests
   def new_trade(time, price, amount)
     { time: time, price: BigDecimal.new(price), amount: BigDecimal.new(amount) }
