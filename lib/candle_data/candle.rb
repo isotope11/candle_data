@@ -13,6 +13,8 @@ module CandleData
 
     def update(price, volume)
       @close = price
+      @low   = price if price < @low
+      @high  = price if price > @high
       @volume += volume
     end
 

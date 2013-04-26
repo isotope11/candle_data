@@ -21,6 +21,22 @@ describe Candle do
     expect(candle.volume).to eq(volume + new_volume)
   end
 
+  it "has its low updated" do
+    candle = Candle.new(open_time, open, high, low, close, volume)
+    new_price = BigDecimal('10')
+    new_volume = BigDecimal('1')
+    candle.update(new_price, new_volume)
+    expect(candle.low).to eq(new_price)
+  end
+
+  it "has its high updated" do
+    candle = Candle.new(open_time, open, high, low, close, volume)
+    new_price = BigDecimal('111')
+    new_volume = BigDecimal('1')
+    candle.update(new_price, new_volume)
+    expect(candle.high).to eq(new_price)
+  end
+
   it "can output to_h" do
     candle = Candle.new(open_time, open, high, low, close, volume)
     expect(candle.to_h).to eq({
