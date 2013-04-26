@@ -9,7 +9,7 @@ describe Candle do
   let(:volume) { BigDecimal('100') }
 
   it "can be initialized" do
-    expect { Candle.new(open_time, open, high, low, close, volume) }.to_not raise_error 
+    expect { Candle.new(open_time, open, high, low, close, volume) }.to_not raise_error
   end
 
   it "can be updated" do
