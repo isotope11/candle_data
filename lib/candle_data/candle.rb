@@ -18,12 +18,12 @@ module CandleData
 
     def to_h
       {
-        open_time: open_time,
-        open: open,
-        high: high,
-        low: low,
-        close: close,
-        volume: volume
+        open_time: open_time.iso8601,
+        open: open.to_s('F'),
+        high: high.to_s('F'),
+        low: low.to_s('F'),
+        close: close.to_s('F'),
+        volume: volume.to_s('F')
       }
     end
   end
