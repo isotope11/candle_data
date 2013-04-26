@@ -6,7 +6,7 @@ class CandleBuilder
   attr_reader :candles
   def initialize(trades, options={})
     @trades = trades
-    @candle_width = options.fetch(:candle_width){ raise CandleWidthNotSpecifiedError }
+    @candle_width = options.fetch(:candle_width) { raise CandleWidthNotSpecifiedError }
     @candles = []
     @last_time = nil
     extract_candles
