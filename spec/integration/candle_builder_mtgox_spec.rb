@@ -21,8 +21,7 @@ describe "Reading Mt. Gox Data" do
   it "can segment the data appropriately" do
     builder = CandleBuilder.new(mapped_data, candle_width: 1)
     expect(builder.candles.count).to eq(17526)
-    builder = CandleBuilder.new(mapped_data, candle_width: 10)
-    binding.pry
-    expect(builder.candles.count).to eq(5537)
+    builder = CandleBuilder.new(mapped_data, candle_width: 3600)
+    expect(builder.candles.count).to eq(24)
   end
 end
