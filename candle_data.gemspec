@@ -10,6 +10,6 @@ Gem::Specification.new do |gem|
   gem.version = CandleData::VERSION
   gem.add_development_dependency 'rspec'
 
-  gem.files = %w(lib/candledata.rb lib/candle_data/candle.rb lib/candle_data/candle_builder.rb lib/candle_data/version.rb)
+  gem.files = %w(lib/candle_data.rb lib/candle_data/candle.rb lib/candle_data/candle_builder.rb lib/candle_data/version.rb)
   gem.require_paths = ["lib"]
 end
