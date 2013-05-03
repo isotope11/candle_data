@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    candle_data (0.0.2)
+    candle_data (0.0.3)
 
 GEM
   remote: https://rubygems.org/

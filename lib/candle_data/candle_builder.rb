@@ -27,7 +27,6 @@ module CandleData
         add_to_current_candle(trade)
       else
         add_new_candle_for(trade)
-        return true
       end
     end
 
