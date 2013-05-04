@@ -5,6 +5,11 @@ module CandleData
     class CandleWidthNotSpecifiedError < StandardError; end
 
     attr_reader :candles
+
+    # trades are expected to be hash-like objects that respond to the following keys (as symbols):
+    # - time
+    # - price
+    # - amount
     def initialize(trades, options={})
       @trades = trades
       @candle_width = options.fetch(:candle_width) { raise CandleWidthNotSpecifiedError }
